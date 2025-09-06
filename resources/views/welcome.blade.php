@@ -1,132 +1,126 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <title>Selamat Datang di Sistem Koperasi</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <style>
-        /* Reset dasar */
-        body, html {
-        margin: 0;
-        padding: 0;
-        height: 100%;
-        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Selamat Datang - Sistem Koperasi</title>
+<style>
+  /* Reset basic styling */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
 
-        /* Background gradient */
-        body {
-            background: linear-gradient(135deg, #1cc7a5, #007bff);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            color: #fff;
-            flex-direction: column;
-            padding: 20px;
-        }
+  body, html {
+    height: 100%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #1e3c72, #2a5298);
+    color: #fff;
+  }
 
-        /* Logo */
-        .logo-ksp {
-            width: 80px;
-            height: auto;
-            cursor: pointer;
-            transition: transform 0.2s;
-            margin-bottom: 20px;
-        }
+  /* Wrapper for center alignment */
+  .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    padding: 20px;
+    text-align: center;
+  }
 
-        .logo-ksp:hover {
-            transform: scale(1.05);
-        }
+  /* Logo styling */
+  .logo {
+    background-color: #fff;
+    padding: 15px 20px;
+    border-radius: 10px;
+    margin-bottom: 30px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    font-weight: bold;
+    color: #1e3c72;
+    font-size: 2rem;
+    font-family: 'Poppins', sans-serif;
+    letter-spacing: 2px;
+  }
 
-        /* Judul */
-        h1 {
-            font-size: 2.5rem;
-            font-weight: 700;
-            margin-bottom: 30px;
-            line-height: 1.3;
-        }
+  /* Main heading */
+  h1 {
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+  }
 
-        /* Tombol login */
-        .btn-login {
-            display: inline-block;
-            padding: 12px 24px;
-            margin: 10px;
-            border-radius: 8px;
-            border: none;
-            font-size: 1rem;
-            font-weight: bold;
-            color: #fff;
-            transition: 0.3s;
-            text-decoration: none;
-        }
+  /* Links area styling */
+  .links {
+    margin: 20px 0;
+  }
 
-        .btn-admin {
-            background-color: #1c1c1c;
-        }
+  .links a {
+    color: #a8d0ff;
+    text-decoration: none;
+    margin: 0 10px;
+    font-weight: 600;
+    transition: color 0.3s ease;
+  }
 
-        .btn-nasabah {
-            background-color: #00cc99;
-        }
+  .links a:hover {
+    color: #ffffff;
+    text-decoration: underline;
+  }
 
-        .btn-admin:hover {
-            background-color: #333;
-        }
+  /* Sub text */
+  .subtext {
+    font-size: 0.9rem;
+    color: #cbd5e1;
+    margin-bottom: 10px;
+  }
 
-        .btn-nasabah:hover {
-            background-color: #009977;
-        }
+  /* Button with modern style */
+  .btn-register {
+    color: #fff;
+    background-color: #4fd1c5;
+    padding: 10px 20px;
+    border-radius: 30px;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    text-decoration: none;
+    display: inline-block;
+    box-shadow: 0 4px 15px rgba(79,209,197,0.5);
+    transition: background-color 0.3s ease;
+  }
 
-        /* Link daftar */
-        .text-register {
-            margin-top: 20px;
-            font-size: 0.95rem;
-        }
+  .btn-register:hover {
+    background-color: #38b2ac;
+  }
 
-        .btn-daftar {
-            display: inline-block;
-            padding: 12px 24px;
-            border-radius: 8px;
-            background-color: #00cc99;
-            color: #fff;
-            text-decoration: none;
-            font-weight: bold;
-            margin-top: 10px;
-            transition: 0.3s;
-        }
-
-        .btn-daftar:hover {
-            background-color: #009977;
-        }
-
-        /* Responsif */
-        @media (max-width: 480px) {
-            h1 {
-                font-size: 2rem;
-            }
-
-            .btn-login,
-            .btn-daftar {
-                width: 100%;
-                margin: 8px 0;
-            }
-        }
-
-    </style>
+  /* Responsive adjustments */
+  @media (max-width: 480px) {
+    h1 {
+      font-size: 1.6rem;
+    }
+    .logo {
+      font-size: 1.5rem;
+      padding: 10px 15px;
+    }
+  }
+</style>
 </head>
-
 <body>
-    <div class="centered">
-        <img src="{{ asset('images/logo-ksp.png') }}" class="logo-ksp" alt="Logo KSP">
-        <h1>Selamat Datang di <br>Sistem Koperasi</h1>
 
-        <div>
-            <a href="{{ route('admin.login') }}" class="btn btn-dark btn-custom">Login Admin</a>
-            <a href="{{ route('nasabah.login') }}" class="btn btn-success btn-custom">Login Nasabah</a>
-        </div>
+<div class="container">
+  <div class="logo">KSP</div>
+  <h1>Selamat Datang di<br />Sistem Koperasi</h1>
 
-        <p class="mt-3">Belum Punya Akun?</p>
-        <a href="{{ route('registrasi.index') }}" class="btn btn-success btn-custom">Daftar Sekarang</a>
-    </div>
+  <div class="links">
+    <a href="{{ route('admin.login') }}">Login Admin</a> |
+    <a href="{{ route('nasabah.login') }}">Login Nasabah</a>
+  </div>
+
+  <div class="subtext">Belum Punya Akun?</div>
+  <a class="btn-register" href="{{ route('registrasi.index') }}">Daftar Sekarang</a>
+</div>
+
 </body>
 </html>
